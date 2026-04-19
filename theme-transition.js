@@ -9,8 +9,8 @@
 
   function update() {
     var scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-    var docHeight = document.documentElement.scrollHeight - window.innerHeight;
-    var t = docHeight > 0 ? Math.min(scrollTop / docHeight, 1) : 0;
+    var threshold = window.innerHeight; // fully pink after scrolling 1 viewport height
+    var t = Math.min(scrollTop / threshold, 1);
     var s = document.documentElement.style;
     s.setProperty('--bg-color', rgb(lerp(dark.bg, pink.bg, t)));
     s.setProperty('--text-color', rgb(lerp(dark.text, pink.text, t)));
