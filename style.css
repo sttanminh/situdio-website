@@ -79,6 +79,13 @@ h1, h2, h3 { font-family: 'Playfair Display', serif; }
 .social-links a { color: #f8d8e4; transition: color .2s; }
 .social-links a:hover { color: #FFB6C1; }
 
+/* Service Detail Pages */
+.service-hero { padding: 120px 20px 60px; text-align: center; background: linear-gradient(135deg, #FFF0F3 0%, #FFD6E0 50%, #FFB6C1 100%); }
+.service-hero h1 { font-size: 2.6rem; color: #6b3a5a; }
+.service-description { max-width: 720px; margin: 0 auto 48px; font-size: 1.05rem; color: #7a5a6a; text-align: center; line-height: 1.8; }
+.service-cta { text-align: center; margin-top: 48px; }
+a.card { display: block; color: inherit; }
+
 /* Responsive */
 @media (max-width: 768px) {
   .menu-toggle { display: flex; }
