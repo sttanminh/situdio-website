@@ -86,6 +86,22 @@ h1, h2, h3 { font-family: 'Playfair Display', serif; }
 .service-cta { text-align: center; margin-top: 48px; }
 a.card { display: block; color: inherit; }
 
+/* Scroll Animations */
+.fade-in { opacity: 0; transform: translateY(30px); transition: opacity .6s ease, transform .6s ease; }
+.fade-in.visible { opacity: 1; transform: translateY(0); }
+.slide-left { opacity: 0; transform: translateX(-60px); transition: opacity .6s ease, transform .6s ease; }
+.slide-right { opacity: 0; transform: translateX(60px); transition: opacity .6s ease, transform .6s ease; }
+.slide-left.visible, .slide-right.visible { opacity: 1; transform: translateX(0); }
+.gallery-grid img { opacity: 0; transform: scale(.9); transition: opacity .5s ease, transform .5s ease; }
+.gallery-grid img.visible { opacity: 1; transform: scale(1); }
+.gallery-grid img:hover { transform: scale(1.05); transition: transform .3s ease; }
+.navbar { transition: padding .3s ease, background .3s ease; }
+.navbar.scrolled { background: rgba(10,10,10,.99); }
+.navbar.scrolled .nav-container { height: 48px; }
+.nav-container { transition: height .3s ease; }
+.hero { position: relative; overflow: hidden; }
+.hero::before { content: ''; position: absolute; inset: 0; background: inherit; z-index: -1; transition: transform .1s linear; }
+
 /* Responsive */
 @media (max-width: 768px) {
   .menu-toggle { display: flex; }
