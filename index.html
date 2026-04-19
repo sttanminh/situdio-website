@@ -171,6 +171,20 @@ document.querySelectorAll('.nav-links a').forEach(function(link) {
   });
 });
 </script>
+<script>
+// Debug: find overflowing elements
+document.addEventListener('DOMContentLoaded', function() {
+  var docWidth = document.documentElement.clientWidth;
+  var all = document.querySelectorAll('*');
+  for (var i = 0; i < all.length; i++) {
+    var rect = all[i].getBoundingClientRect();
+    if (rect.right > docWidth + 1 || rect.left < -1) {
+      console.log('OVERFLOW:', all[i].tagName, all[i].className, 'left:', rect.left, 'right:', rect.right, 'docWidth:', docWidth);
+      all[i].style.outline = '3px solid red';
+    }
+  }
+});
+</script>
 <script src="scroll-effects.js"></script>
 <script src="theme-transition.js"></script>
 </body>
